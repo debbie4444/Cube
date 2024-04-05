@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: rgb(254, 245, 229);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        .top-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #quizButton {
+            background-color: rgb(208, 112, 112);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: download, sans-serif;
+        }
+
+        #quizButton:hover {
+            background-color: rgb(251, 186, 197);
+        }
+    </style>
+</head>
+<body class="indexPage">
+    <div class="top-layer">
+        <h4>The Cube personality test is a quick mental exercise that lasts approximately 90 seconds and can be used to tell a few things about your personality. <br>
+             You are supposed to image a situation of a white room. You need a working imagination and can complete the test successfully. You are required to respond <br>
+             to every question very quickly.There are no rights or wrongs. Every answer suggests an interpretation.</h4>
+    </div>
+
+    <div class="button-container">
+        <a href="quiz.html">
+            <button id="quizButton">Go to Test</button>
+        </a>
+    </div>
+</body>
+</html>

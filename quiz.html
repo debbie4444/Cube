@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top-layer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          margin-top: 50px;
+        }
+        .image-container {
+            float: left;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .image {
+             display: none; 
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="quizPage">
+    <script>
+        var fromValue;      
+        var params = ['n','n','n','n','n','n','n','n','n','n','n','n','n','n','n'];
+    </script>
+    
+    <div class="top-layer">
+        
+
+    <div id="description1" class="description">
+        <span class="toggleButton">Imagine now that you are in a desert, and in this desert there is a cube</span>
+        <div class="details" style="display: none;">
+            -How big is the cube in relation to the desert? <br>
+                <input type="radio" id="answer1-1-1" onclick="getValue(this,1);" name="answer1" value="Small">
+                <label for="option1">small</label>
+                <input type="radio" id="answer1-1-2" onclick="getValue(this,1);" name="answer1" value="Medium">
+                <label for="option2">medium</label>
+                <input type="radio" id="answer1-1-3" onclick="getValue(this,1);" name="answer1" value="Large">
+                <label for="option3">large</label><br>
+            -How far away is it from you:
+                <input type="text"class="custom-input" id="answer1-2" name="answer2" oninput="getValue(this,2)"><br>
+            -What is it made of:
+                <input type="text" class="custom-input" id="answer1-3" name="answer3"  oninput="getValue(this,3)"><br>
+            -Is it transparent/hollow? Can you see what's inside? <br>
+                <input type="radio" id="answer1-4-1" onclick="getValue(this,4);" name="answer4" value="transparent">
+                <label for="option1">transparent</label>
+                <input type="radio" id="answer1-4-2" onclick="getValue(this,4);" name="answer4" value="translucency">
+                <label for="option2">translucency</label>
+                <input type="radio" id="answer1-4-3" onclick="getValue(this,4);" name="answer4" value="opacification">
+                <label for="option3">opacification</label> <br>
+            <button class="confirmButton custom-button" id="button">Next</button>
+        </div>
+    </div>
+    
+    <div id="description2" class="description">
+        <span class="toggleButton">Near the desert and your cube, you notice another ladder </span>
+        <div class="details" style="display: none;">
+            -Is this ladder above or below the cube? <br> 
+                <input type="text" class="custom-input" id="answer2-1" name="answer5" oninput="getValue(this,5);" ><br>
+            -What is the distance between the ladder and the cube? <br>
+                <input type="text" class="custom-input" id="answer2-2" name="answer6"  oninput="getValue(this,6);"><br>
+            -What material is it made of? <br>
+                <input type="text" class="custom-input" id="answer2-3" name="answer7"  oninput="getValue(this,7);"><br>
+            <button class="confirmButton custom-button" id="button">Next</button>
+        </div>
+    </div>
+    
+    
+    <div id="description3" class="description">
+        <span class="toggleButton">Imagine a horse in the scene</span>
+        <div class="details" style="display: none;">
+            -How far is the horse from the cube? <br>
+                <input type="text" class="custom-input" id="answer3-1" name="answer8" oninput="getValue(this,8);"><br>
+            -Do you think the horse is a young, young or old horse? <br>
+                <input type="radio" id="answer3-2-1" name="answer9" onclick="getValue(this,9);" value="young">
+                <label for="option1">young</label>
+                <input type="radio" id="answer3-2-2" name="answer9" onclick="getValue(this,9);"value="adult">
+                <label for="option2">adult</label>
+                <input type="radio" id="answer3-2-3" name="answer9" onclick="getValue(this,9);" value="old">
+                <label for="option3">old</label><br>
+            -Does the horse have a saddle, a bridle, or anything like that? <br>
+                <input type="text" class="custom-input" id="answer3-3" name="answer10"  oninput="getValue(this,10);"><br>
+            <button class="confirmButton custom-button" id="button">Next</button>
+        </div>
+    </div>
+    
+    
+    <div id="description4" class="description">
+        <span class="toggleButton">There is a storm coming in front of us</span>
+        <div class="details" style="display: none;">
+            -Where is this storm located on the cube? <br>
+                <input type="text" class="custom-input" id="answer4-1" name="answer11" oninput="getValue(this,11);"><br> 
+            -Do you think it will stop in a little while or will it never stop? <br>
+                <input type="text"class="custom-input" id="answer4-2" name="answer12" oninput="getValue(this,12);"><br>
+            <button class="confirmButton custom-button" id="button">Next</button>
+        </div>
+    </div>
+    
+    
+    <div id="description5" class="description">
+        <span class="toggleButton">There are flowers in the scene before you</span>
+        <div class="details" style="display: none;">
+            -How many flowers do you think there are? <br>
+                <input type="text" class="custom-input" id="answer5-1" name="answer13" oninput="getValue(this,13);"><br> 
+            -How far is it/they from the cube? <br>
+                <input type="text" class="custom-input" id="answer5-1" name="answer14" oninput="getValue(this,14);"><br> 
+            -What color is it/they? <br>
+               
+                <select id="answer5-1" class="custom-dropdown" name="answer15" onchange="getValue(this,15);">
+                    <option value="white">white</option>
+                    <option value="black">black</option>
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="pink">pink</option>
+                    <option value="orange">orange</option>
+                    <option value="purple">purple</option>
+                    <option value="blue">blue</option>
+                    <option value="yellow">yellow</option>
+                  </select><br>
+            <button class="custom-button" id="button" onclick="submitForm();" >Confirm</button>
+        </div>
+    </div>
+
+    <script src="drop-down.js"></script>
+    <script src="size.js"></script>
+    
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="image1" class="image-container">
+        <div id="image1" class="image">
+            <img id="img1" src="pic/Large.png" width="50" height="50" alt="pic1">
+        </div>
+        <div id="image2" class="image">
+            <img  id="img2" src="pic/ladder.png" width="50" height="50" alt="pic2">
+        </div>
+        <div id="image3" class="image">
+            <img  id="img3"  src="pic/horse.png" width="50" height="50" alt="pic3">
+        </div>
+        <div id="image4" class="image">
+            <img id="img4" src="pic/storm.png" width="50" height="50" alt="pic4">
+        </div>
+        <div id="image5" class="image">
+            <img  id="img5" src="pic/flower.png" width="50" height="50" alt="pic5">
+        </div>
+    </div>
+</body>
+
+
+</html>
